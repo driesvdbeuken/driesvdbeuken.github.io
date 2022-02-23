@@ -1,0 +1,8 @@
+@media screen and (min-width:900px), screen and (min-height:500px) {
+.wrapper.content {display:block;}
+.wrapper.notice {display:none;}
+}
+@media screen and (max-width:900px), screen and (max-height:500px) {
+.wrapper.content {display:none;}
+.wrapper.notice {display:block;}
+}
