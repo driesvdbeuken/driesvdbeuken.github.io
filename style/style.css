@@ -5,31 +5,65 @@ body, html {
   background-color: black;
   overflow: hidden;
 }
+* {
+    box-sizing: border-box;
+  }
 
 .bg {
-  /* The image used */
   background-image: url("home.jpg");
-  
-  /* Full height */
   height: 100%; 
 
-  /* Center and scale the image nicely */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.bg-text {
+.bg-center {
   color: white;
   font-weight: bold;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 2;
   width: 80%;
   padding: 20px;
   text-align: center;
+  margin-top: -100px;
 }
+.avatar {
+    width: 200px;
+    border-radius: 50%;
+}
+.fa {
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+    border-radius: 50%;
+}
+.fa:hover {
+    opacity: 0.8;
+}
+.fa-linkedin {
+    background: #007bb5;
+    color: white;
+}
+.fa-instagram {
+    background: #125688;
+    color: white;
+}
+.fa-flickr {
+    background: #f40083;
+    color: white;
+}
+.fa-pinterest {
+    background: #cb2027;
+    color: white;
+}
+.fa-github {
+    background: #333;
+    color: white;
+}
+
 .sidenav {
   height: 100%;
   width: 0;
