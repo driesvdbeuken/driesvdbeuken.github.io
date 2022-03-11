@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html class="animate__animated animate__fadeInDown">
+<head>
+    <title>Projects</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style\projects.css">
+    <link rel="stylesheet" href="style\mousescroll.css">
+	<link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="style\prism.css"/>
+</head>
+
+<body class="line-numbers">
+	<div id="mySidenav" class="sidenav">
+	  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+	  <a href="index.html">Home</a>
+	  <a href="photos.html">Photos</a>
+      <a href="projects.html">Projects</a>
+	</div>
+	<div class="menubutton">
+		<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+	</div>
+
+  <div class="scroll-container">
+        <div class="scroll-area">
+            <div class="bg-center">
+                <h1>Projects:</h1>
+                <p>I am mostly coding in Python, but learning to make Smart Contracts with Solidity. I also want to learn C++.</p>
+                <div class="mouse_scroll">
+                    <div class="mouse">
+                        <div class="wheel"></div>
+                    </div>
+                    <div>
+                        <span class="m_scroll_arrows unu"></span>
+                        <span class="m_scroll_arrows doi"></span>
+                        <span class="m_scroll_arrows trei"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-area">
+            <div class="bg-center">
+                <h1>Caesar Cipher Encode/Decode</h1>
+                <div class="ex3">
+                    <pre>
+                        <code class="language-python">
+                            import sys, os
+                            import getopt
+                            import time
+                            
+                            def num2chr(n):
+                                assert 0 <= n <= 25
+                                return chr(ord('a') + n)
+                            
+                            def chr2num(c):
+                                assert 'a' <= c <= 'z'
+                                return ord(c) - ord('a')
+                            
+                            def rot(x, n):
+                                return num2chr((chr2num(x) + n) % 26)
+                            
+                            def decrypt(text, n):
+                                z = 26 - n
+                                code = ''.join([ rot(c, z) for c in text ])
+                                return code
+                            
+                            def encrypt(text, n):
+                                code = ''.join([ rot(c, n) for c in text ])
+                                return code
+                            
+                            if __name__ == '__main__':
+                                import os, sys
+                                import getopt   
+                            
+                                n = 13
+                                oCrypt = 'e'
+                                opts, args = getopt.getopt(sys.argv[1:], 'hedn:')
+                                for opt, arg in opts:
+                                    if opt == '-h':
+                                        print(f'Usage: {sys.argv[0]} [-h] [-e|d] [ -n rot ] <text...>')
+                                        sys.exit()
+                                    elif opt == '-n': n = int(arg)
+                                    elif opt == '-e': oCrypt = 'e'
+                                    elif opt == '-d': oCrypt = 'd'
+                            
+                                if oCrypt == 'e':
+                                    plain = ''.join(args).lower()
+                                    code = encrypt(plain, n)
+                                    print(code)
+                                if oCrypt == 'd':
+                                    code = ''.join(args).lower()
+                                    plain = decrypt(code, n)
+                                    print(plain)                            
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-area"></div>
+  </div>
+
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+}
+</script>
+<script src="style/prism.js"></script>
+
+</body>
+</html>

@@ -20,7 +20,12 @@ h1 {
   height: 100%;
   margin: 0 auto;
 }
-
+.bg-center {
+    margin-top: 50px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+  }
 .scroll-container {
   overflow: auto;
   scroll-snap-type: y mandatory;
